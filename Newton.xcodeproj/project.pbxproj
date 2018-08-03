@@ -1278,7 +1278,6 @@
 		F4FA710809A3308500B62DDB /* StoreStreamObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreStreamObjects.h; sourceTree = "<group>"; };
 		F4FA711809A3321000B62DDB /* StoreStreamObjects.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StoreStreamObjects.cc; sourceTree = "<group>"; };
 		F4FA712709A3334700B62DDB /* StoreWrapper.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StoreWrapper.cc; sourceTree = "<group>"; };
-		F4FD7DDA1AB072C0006294D8 /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = doc; sourceTree = "<group>"; };
 		F4FD7DDB1AB1EEAE006294D8 /* assistFrames.ns */ = {isa = PBXFileReference; lastKnownFileType = text; name = assistFrames.ns; path = NS/assistFrames.ns; sourceTree = "<group>"; };
 		F4FD7DDC1AB1EEAE006294D8 /* FunctionsFrame.ns */ = {isa = PBXFileReference; lastKnownFileType = text; name = FunctionsFrame.ns; path = NS/FunctionsFrame.ns; sourceTree = "<group>"; };
 		F4FD7DDD1AB1EEAE006294D8 /* MagicPointersArray.ns */ = {isa = PBXFileReference; lastKnownFileType = text; name = MagicPointersArray.ns; path = NS/MagicPointersArray.ns; sourceTree = "<group>"; };
@@ -1427,7 +1426,6 @@
 				F4241FB017400A9700F4D699 /* MessagePad.entitlements */,
 				F42E518F1227B3D500D49B5D /* Info-Newton.plist */,
 				F458FCB81247510C00539427 /* Info-MessagePad.plist */,
-				F4FD7DDA1AB072C0006294D8 /* doc */,
 				F4E64EA105552C17006B0634 /* ConfigGlobal.h */,
 				66393E2404C7F0F400A80002 /* Newton.h */,
 				66393E2804C7F0F400A80002 /* NewtonDebug.h */,
@@ -2430,11 +2428,10 @@
 		6617816D020F1EE40039A44D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Newton Research";
 				TargetAttributes = {
 					F4A8B53005738194004D6931 = {
-						DevelopmentTeam = SH44Z8RDF2;
 						ProvisioningStyle = Automatic;
 					};
 					F4B8094406F217930042F1D4 = {
@@ -2521,7 +2518,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "IDENTITY=\"Mac Developer: simonbell@mac.com (9LSGH9XGY7)\"\ncodesign --verbose --force --sign \"$IDENTITY\" \"${BUILT_PRODUCTS_DIR}/Newton.framework/Versions/A/Newton\"";
+			shellScript = "#IDENTITY=\"Mac Developer: simonbell@mac.com (9LSGH9XGY7)\"\n#codesign --verbose --force --sign \"$IDENTITY\" \"${BUILT_PRODUCTS_DIR}/Newton.framework/Versions/A/Newton\"";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -3145,9 +3142,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = SH44Z8RDF2;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Frames/ConfigFrames.h";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -3171,9 +3168,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = SH44Z8RDF2;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Frames/ConfigFrames.h";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -3196,8 +3193,9 @@
 		F4367936093B7565001AE880 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = SH44Z8RDF2;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 11;
 				DYLIB_CURRENT_VERSION = 11;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3218,8 +3216,9 @@
 		F4367937093B7565001AE880 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = SH44Z8RDF2;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 11;
 				DYLIB_CURRENT_VERSION = 11;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -3242,12 +3241,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -3275,12 +3282,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -3304,9 +3319,10 @@
 		F4ECC35A0DE492E70023D27A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = SH44Z8RDF2;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 11;
 				DYLIB_CURRENT_VERSION = 11;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Frames/ConfigFrames.h";
@@ -3329,9 +3345,10 @@
 		F4ECC35B0DE492E70023D27A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = SH44Z8RDF2;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 11;
 				DYLIB_CURRENT_VERSION = 11;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Frames/ConfigFrames.h";
