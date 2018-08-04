@@ -1,3 +1,5 @@
-
+.DS_Store
+*.xcworkspace
+xcuserdata/
 doc/
 NS/Converted Files/
